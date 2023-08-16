@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .video-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .overlay-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+            </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="videoPlayer" controls>
+            <source src="./video.mp4" type="video/mp4">
+        </video>
+        <img src="./button.jpg" alt="Play/Stop Video" id="stopVideo" class="overlay-button">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stopVideo = document.getElementById('stopVideo');
+            const videoPlayer = document.getElementById('videoPlayer');
+            const clickStop = document.getElementById('clickStop');
+        
+            stopVideo.addEventListener('click', function() {
+                if (videoPlayer.paused) {
+                    videoPlayer.play();
+                } else {
+                    videoPlayer.pause();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
